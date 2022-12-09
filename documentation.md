@@ -9,6 +9,12 @@ file and that you may need to recompile the CSS file using the included Laravel 
 The HydePHP UI Kit is still in development and is not yet ready for production use.
 All components including their names can and probably will be changed.
 
+## Preface
+
+Please make sure you're familiar with [Laravel Blade](https://laravel.com/docs/blade) before using the HydePHP UI Kit.
+
+>info Tip: Most components allow you to pass any additional HTML attributes to the element!
+
 ## Components
 
 ### Buttons
@@ -93,3 +99,41 @@ Why not combine the components?
     </x-slot>
 </x-hyde::ui.components.card>
 ```
+
+### Typography Components
+
+#### Heading
+
+This component will create a styled `<h1>` level heading centered on the page.
+
+```blade
+<x-hyde::ui.components.heading>
+    Lorem ipsum dolor sit amet.
+</x-hyde::ui.components.heading>
+```
+
+#### Prose
+
+This simple component will create an `<article>` element with [TailwindCSS Typography](https://tailwindcss.com/docs/typography-plugin) (prose) styles applied.
+
+```blade
+<x-hyde::ui.components.prose>
+    <h2>Prose Heading</h2>
+    <p>Prose paragraph</p>
+</x-hyde::ui.components.prose>
+```
+
+#### Markdown
+
+This component will convert any Markdown within it to HTML using the Hyde Markdown compiler.
+
+```blade
+<x-hyde::ui.components.markdown>
+## Markdown Heading
+
+Hello world!
+</x-hyde::ui.components.markdown>
+```
+
+>warn Remember to de-indent the Markdown content otherwise it will be rendered as a code block.
+>info Tip: You may also want to wrap this in the prose element or the Markdown will not be styled.
