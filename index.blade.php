@@ -58,7 +58,7 @@
             <x-hyde::ui.components.markdown>
 ### Markdown
 
-Remember to deintent the Markdown content otherwise it will be rendered as a code block.
+Remember to de-indent the Markdown content otherwise it will be rendered as a code block.
 
 You may also want to wrap this in a `class="prose"` element or the Markdown will not be styled.
             </x-hyde::ui.components.markdown>
