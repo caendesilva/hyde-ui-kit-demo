@@ -43,6 +43,9 @@
 		</a>
 		<nav aria-label="Main navigation" id="main-navigation" class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
 			<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
+				<a href="../index.html" class="font-bold px-4" aria-label="Home page">
+					HydePHP
+				</a>
 				<div class="ml-auto">
 					<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
 						<span class="sr-only">Toggle dark theme</span>
@@ -60,22 +63,77 @@
 				</div>
 			</div>
 
+			<div class="block md:hidden">
+				<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200" aria-label="Toggle navigation menu">
+					<svg x-show="! navigationOpen" title="Open Navigation Menu" class="dark:fill-gray-200" style="" id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+						<title>Open Menu</title>
+						<path d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+					</svg>
+					<svg
+						x-show="navigationOpen"
+						title="Close Navigation Menu"
+						class="dark:fill-gray-200"
+						style="display: none;"
+						id="close-main-navigation-menu-icon"
+						xmlns="http://www.w3.org/2000/svg"
+						height="24"
+						viewBox="0 0 24 24"
+						width="24"
+					>
+						<title>Close Menu</title>
+						<path d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+					</svg>
+				</button>
+			</div>
+
 			<div
 				id="main-navigation-links"
-				class="w-full x-uncloak-md md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+				class="w-full x-uncloak-md md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700 hidden"
 				:class="navigationOpen ? '' : 'hidden'"
-				x-cloak
 			>
 				<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
-				
+					<li class="md:mx-2">
+						<a href="../index.html" class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
 
 		<section>
 			<main id="content" class="mx-auto max-w-7xl py-16 px-8">
-				<h1 class="text-center text-3xl font-bold">Heading: Hello World!</h1>
+				<h1 class="text-left text-3xl font-bold" align="left">Heading Component</h1>
+				<div class="mt-3">
+					<article class="prose dark:prose-invert">
+						<p>The above heading component is normally centered but is aligned here.</p>
+					</article>
+				</div>
+
 				<div class="mt-8">
+					<article class="prose dark:prose-invert">
+						<h3>Prose Component</h3>
+						<p>Any text-related <abbr>HTML</abbr> here will be styled using the <a href="https://tailwindcss.com/docs/typography-plugin" rel="nofollow noopener" target="_blank">Tailwind Typography</a> plugin.</p>
+					</article>
+				</div>
+
+				<div class="mt-8">
+					<article class="prose dark:prose-invert">
+						<div>
+							<h3>Markdown Component</h3>
+							<p>
+								Any <strong>Markdown</strong> within these tags will be <em>compiled</em> to HTML.<br />
+								<em>Perfect</em> to use with the <code>Prose</code> component so that it gets styled!
+							</p>
+						</div>
+					</article>
+				</div>
+
+				<div class="mt-8">
+					<article class="prose dark:prose-invert mb-4">
+						<h3>Buttons &amp; Inputs</h3>
+						<p>These stylish and simple buttons are perfect for all your buttoning needs!</p>
+					</article>
 					<button
 						class="inline-flex items-center justify-center font-medium text-sm text-white rounded-lg shadow border m-1 py-1 px-4 bg-indigo-600 hover:bg-indigo-500 focus:bg-indigo-700 focus:ring-indigo-600 focus:ring-2 focus:outline-none border-transparent transition-colors"
 					>
@@ -89,13 +147,23 @@
 				</div>
 
 				<div class="mt-3">
+					<article class="prose dark:prose-invert mb-3">
+						<p>The kit even comes with a simple input element too!</p>
+					</article>
 					<input
 						class="block rounded-md shadow-sm border-gray-300 dark:border-gray-700 block m-1 py-2 px-3 font-medium text-sm text-gray-700 dark:text-gray-300 dark:focus:text-white rounded-lg shadow border-none bg-gray-200 dark:bg-gray-600 focus:ring-indigo-600 dark:focus:ring-indigo-500 focus:ring-2 focus:outline-none border-transparent transition-colors"
-						value="Input"
+						placeholder="Write something!"
 					/>
 				</div>
 
-				<div>
+				<div class="mt-8 sm:-mx-6">
+					<article class="prose dark:prose-invert mb-2 sm:px-6">
+						<h3>Cards</h3>
+						<p>
+							The versatile card component lets you create perfect cards for your site.<br />
+							Of course it comes with a variety of options!
+						</p>
+					</article>
 					<div class="py-4 sm:px-6 w-96 max-w-full">
 						<article class="flex flex-col overflow-hidden bg-gray-50 dark:bg-slate-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
 							<section class="px-6 py-4">
@@ -115,43 +183,21 @@
 							</section>
 						</article>
 					</div>
-
 					<div class="py-4 sm:px-6 w-96 max-w-full">
 						<article class="flex flex-col overflow-hidden bg-gray-50 dark:bg-slate-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
 							<header class="px-6 pt-4">
 								<span class="text-xl font-bold">
-									Card Title & Footer
+									Card Title &amp; Footer
 								</span>
 							</header>
 							<section class="px-6 py-4">
 								A card with some content and a footer.
 							</section>
-							<footer class="text-sm px-6 pb-4 mt-2 text-center">
-								<button
-									class="inline-flex items-center justify-center font-medium text-sm text-white rounded-lg shadow border m-1 py-1 px-4 bg-indigo-600 hover:bg-indigo-500 focus:bg-indigo-700 focus:ring-indigo-600 focus:ring-2 focus:outline-none border-transparent transition-colors"
-								>
-									Primary Button
-								</button>
+							<footer class="text-sm px-6 pb-4 mt-2">
+								Footer content
 							</footer>
 						</article>
 					</div>
-				</div>
-
-				<div class="mt-8">
-					<article class="prose dark:prose-invert">
-						<h2>Prose Heading</h2>
-						<p>Prose paragraph</p>
-					</article>
-				</div>
-
-				<div class="mt-8">
-					<article class="prose dark:prose-invert">
-						<div>
-							<h3>Markdown</h3>
-							<p>Remember to de-indent the Markdown content otherwise it will be rendered as a code block.</p>
-							<p>You may also want to wrap this in a <code>class=&quot;prose&quot;</code> element or the Markdown will not be styled.</p>
-						</div>
-					</article>
 				</div>
 			</main>
 		</section>
@@ -163,25 +209,25 @@
 			<a href="#app" aria-label="Go to top of page" class="float-right">
 				<button title="Scroll to top">
 					<svg width="1.5rem" height="1.5rem" role="presentation" class="fill-current text-gray-500 h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-						<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+						<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
 					</svg>
 				</button>
 			</a>
 		</footer>
 
-		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
+		<script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
 
 		<script>
 			function toggleTheme() {
-			    if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			        document.documentElement.classList.remove("dark");
-			        localStorage.setItem('color-theme', 'light');
-			        document.getElementById('meta-color-scheme').setAttribute('content', 'light');
-			    } else {
-			        document.documentElement.classList.add("dark");
-			        localStorage.setItem('color-theme', 'dark');
-			        document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
-			    }
+				if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					document.documentElement.classList.remove("dark");
+					localStorage.setItem('color-theme', 'light');
+					document.getElementById('meta-color-scheme').setAttribute('content', 'light');
+				} else {
+					document.documentElement.classList.add("dark");
+					localStorage.setItem('color-theme', 'dark');
+					document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
+				}
 			}
 		</script>
 	</body>
