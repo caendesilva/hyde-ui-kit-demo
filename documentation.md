@@ -52,6 +52,7 @@ The base component is `<x-hyde::ui.components.input />`, any additional attribut
 An incredibly versatile component that can be used for a wide variety of purposes.
 
 In the most basic form, a card is just a container with a white background and a shadow.
+However, it also supports two slots: `title` and `footer`.
 
 ```blade
 <x-hyde::ui.components.card>
@@ -59,30 +60,18 @@ In the most basic form, a card is just a container with a white background and a
 </x-hyde::ui.components.card>
 ```
 
-You can also add a header with a nice title.
-
 ```blade
 <x-hyde::ui.components.card>
     <x-slot name="title">
         Card Title
     </x-slot>
-
-    A card with some content and a title.
 </x-hyde::ui.components.card>
 ```
 
-And even a footer, perfect for some buttons!
-
 ```blade
 <x-hyde::ui.components.card>
-    <x-slot name="title">
-        Card Title & Footer
-    </x-slot>
-
-    A card with some content and a footer.
-
     <x-slot name="footer">
-        - John Doe
+       Some footer content.
     </x-slot>
 </x-hyde::ui.components.card>
 ```
@@ -92,7 +81,7 @@ Why not combine the components?
 ```blade
 <x-hyde::ui.components.card>
     <x-slot name="title">
-        The best of both worlds.
+        My Amazing Card
     </x-slot>
 
     A card with some content and a footer with a button.
