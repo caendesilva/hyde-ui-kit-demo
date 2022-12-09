@@ -127,3 +127,34 @@ Hello world!
 
 >warn Remember to de-indent the Markdown content otherwise it will be rendered as a code block.
 >info Tip: You may also want to wrap this in the prose element or the Markdown will not be styled.
+
+### What's Next?
+
+The UI kit is minimal by design. It's up to you to create something amazing.
+You can get surprisingly far when you combine the components. Take this newsletter signup card for example!
+
+```blade
+<x-hyde::ui.components.card>
+    <x-slot name="title">
+        Let your creativity flow!
+    </x-slot>
+
+    <x-slot name="main" style="padding-top: 0; padding-bottom: 0;">
+        <x-hyde::ui.components.prose>
+            <x-hyde::ui.components.markdown>
+                The UI kit is minimal by design. It's up to **you** to create something _amazing_.
+
+                Maybe create a form to collect newsletter subscriptions?
+            </x-hyde::ui.components.markdown>
+        </x-hyde::ui.components.prose>
+    </x-slot>
+
+    <x-slot name="footer" class="text-center flex">
+        <x-hyde::ui.components.input placeholder="Enter email" />
+
+        <x-hyde::ui.components.button-primary>
+            Subscribe
+        </x-hyde::ui.components.button-primary>
+    </x-slot>
+</x-hyde::ui.components.card>
+```
