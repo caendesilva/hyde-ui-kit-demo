@@ -19,11 +19,6 @@ Please make sure you're familiar with [Laravel Blade](https://laravel.com/docs/b
 
 ### Buttons
 
-<div style="display: flex;">
-<img src="https://user-images.githubusercontent.com/95144705/206711385-66701bbf-1d86-4a6c-9625-fd7ea90d3805.png" alt="buttons-light" width="49.5%">
-<img src="https://user-images.githubusercontent.com/95144705/206711382-56fd9dde-137a-49cc-87b8-53dcc1c15bc2.png" alt="buttons-dark" width="49.5%">
-</div>
-
 #### Primary
 
 ```blade
@@ -45,12 +40,7 @@ Please make sure you're familiar with [Laravel Blade](https://laravel.com/docs/b
 The base component is `<x-hyde::ui.components.input />`, any additional attributes will be passed to the input element as seen below.
 
 ```blade
-<x-hyde::ui.components.input
-    type="text"
-    name="name"
-    placeholder="Name"
-    value="John Doe"
-/>
+<x-hyde::ui.components.input type="text" name="name" placeholder="Name" value="John Doe" />
 ```
 
 ### Card
